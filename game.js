@@ -2,9 +2,9 @@
 
 function genComputerChoice() {
 
-    let currencChoice = Math.round(Math.random() * 10) % 3;
+    let currentChoice = Math.round(Math.random() * 10) % 3;
 
-    switch(currencChoice) {
+    switch(currentChoice) {
  
         case 0: 
             return "Rock";
@@ -18,4 +18,12 @@ function genComputerChoice() {
     }
 }
 
-console.log(genComputerChoice());
+function getHumanChoice() {
+
+    let currentChoice = "";
+    do {
+        currentChoice = prompt("Rock, Paper, Scissors?");
+    }while(currentChoice != "Rock" && currentChoice != "Paper" && currentChoice != "Scissors");
+
+    return currentChoice;
+}
