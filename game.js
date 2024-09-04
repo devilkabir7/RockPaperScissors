@@ -40,11 +40,11 @@ function compareToRock(computerChoice) {
             break;
         case "paper":
             computerScore += 1;
-            console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
+            console.log(`You lose! ${computerChoice} beats rock`);
             break;
         case "scissors":
             playerScore += 1;
-            console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+            console.log(`You win! rock beats ${computerChoice}`);
             break;
     }
 
@@ -56,14 +56,14 @@ function compareToPaper(computerChoice) {
 
         case "rock":
             playerScore += 1;
-            console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+            console.log(`You win! paper beats ${computerChoice}`);
             break;
         case "paper":
             console.log("It's a tie");
             break;
         case "scissors":
             computerScore += 1;
-            console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
+            console.log(`You lose! ${computerChoice} beats paper`);
             break;
     }
 }
@@ -74,11 +74,11 @@ function compareToScissors(computerChoice) {
 
         case "rock":
             computerScore += 1;
-            console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
+            console.log(`You lose! ${computerChoice} beats scissors`);
             break;
         case "paper":
             playerScore += 1;
-            console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+            console.log(`You win! scissors beats ${computerChoice}`);
             break;
         case "scissors":
             console.log("It's a tie");
@@ -101,7 +101,16 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-let playerChoice = getHumanChoice()
-let computerChoice = genComputerChoice()
+function playGame() {
 
-playRound(playerChoice, computerChoice);
+    for(let i = 0;i < 5;i++) {
+        let playerChoice = getHumanChoice()
+        let computerChoice = genComputerChoice()
+        playRound(playerChoice, computerChoice);
+    }
+
+    console.log(`Player score: ${playerScore}`);
+    console.log(`Computer score: ${computerScore}`);
+}
+
+playGame();
